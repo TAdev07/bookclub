@@ -7,6 +7,12 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js'
     },
+    resolve: {
+        extensions: ['.js', '.json', '.jsx'],
+        alias: {
+            
+        }
+    },
     module: {
         rules: [{
             test: /\.jsx?$/,
@@ -58,9 +64,10 @@ module.exports = {
                 {
                     loader: 'css-loader',
                     options: {
-                        modules: true,
-                        localIdentName: '[local]-[hash:base64:5]',
-                        camelCase: true,
+                        modules: {
+                            localIdentName: '[local]-[hash:base64:5]'
+                        },
+                        localsConvention: 'camelCase',
                         sourceMap: true
                     }
                 },
