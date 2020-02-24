@@ -2,19 +2,108 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    entry: path.resolve(__dirname, 'src/index'),
+    entry: path.resolve(__dirname, 'src/index.jsx'),
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js'
     },
     module: {
         rules: [{
+            test: /\.jsx?$/,
+            loader: 'babel-loader',
+            exclude: /node_modules/,
+            query: {
+                cacheDirectory: true,
+                presets: ['@babel/preset-react']
+            }
+        },
+        {
             test: /\.js$/,
-            include: path.resolve(__dirname, 'src'),
-            use: ['babel-loader']
+            exclude: /node_modules/,
+            use: {
+                loader: 'babel-loader'
+            }
+        },
+        {
+            test: /\.css$/,
+            use: ['style-loader', 'css-loader']
+        },
+        {
+            test: /\.less$/,
+            exclude: /\.module.(less)$/,
+            use: [
+                {
+                    loader: 'style-loader'
+                },
+                {
+                    loader: 'css-loader',
+                    options: {
+                        sourceMap: true
+                    }
+                },
+                {
+                    loader: 'less-loader',
+                    options: {
+                        sourceMap: true
+                    }
+                }
+            ]
+        },
+        {
+            test: /\.module.less$/,
+            use: [
+                {
+                    loader: 'style-loader'
+                },
+                {
+                    loader: 'css-loader',
+                    options: {
+                        modules: true,
+                        localIdentName: '[local]-[hash:base64:5]',
+                        camelCase: true,
+                        sourceMap: true
+                    }
+                },
+                {
+                    loader: 'less-loader',
+                    options: {
+                        sourceMap: true
+                    }
+                }
+            ]
+        },
+        {
+            test: /\.(png|jpg|gif)$/,
+            use: [{
+                loader: 'file-loader'
+            }]
+        },
+        {
+            test: /\.svg$/,
+            use: [{
+                loader: 'file-loader'
+            }]
+        },
+        {
+            type: 'javascript/auto',
+            test: /\.json$/,
+            use: [{
+                loader: 'file-loader',
+                options: {
+                    name: './json/[name].[ext]'
+                }
+            }]
+        },
+        {
+            test: /\.(ttf|eot|woff|woff2)$/,
+            use: [{
+                loader: 'file-loader'
+            }]
         }]
     },
     devServer: {
+        hot: true,
+        historyApiFallback: true,
         contentBase:  path.resolve(__dirname, 'dist'),
         port: 9000
     },

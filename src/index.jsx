@@ -1,6 +1,7 @@
 import React from 'react';
 import {render} from 'react-dom';
+import MainContainer from './layout/Main';
 
 const rootElement = document.getElementById('react-app');
 
-render(<div> Hello World! </div>, rootElement);
+render(<MainContainer />, rootElement);
