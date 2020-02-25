@@ -10,7 +10,7 @@ module.exports = {
     resolve: {
         extensions: ['.js', '.json', '.jsx'],
         alias: {
-            
+
         }
     },
     module: {
@@ -73,6 +73,50 @@ module.exports = {
                 },
                 {
                     loader: 'less-loader',
+                    options: {
+                        sourceMap: true
+                    }
+                }
+            ]
+        },
+        {
+            test: /\.module.styl$/,
+            use: [
+                {
+                    loader: 'style-loader'
+                },
+                {
+                    loader: 'css-loader',
+                    options: {
+                        sourceMap: true
+                    }
+                },
+                {
+                    loader: 'stylus-loader', // compiles Stylus to CSS
+                    options: {
+                        sourceMap: true
+                    }
+                }
+            ]
+        },
+        {
+            test: /\.styl$/,
+            use: [
+                {
+                    loader: 'style-loader'
+                },
+                {
+                    loader: 'css-loader',
+                    options: {
+                        modules: {
+                            localIdentName: '[local]-[hash:base64:5]'
+                        },
+                        localsConvention: 'camelCase',
+                        sourceMap: true
+                    }
+                },
+                {
+                    loader: 'stylus-loader', // compiles Stylus to CSS
                     options: {
                         sourceMap: true
                     }

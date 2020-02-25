@@ -1,7 +1,7 @@
 import React from 'react';
 import {render} from 'react-dom';
-import MainContainer from './layout/Main';
+import LayoutsContainer from './Layouts';
 
 const rootElement = document.getElementById('react-app');
 
-render(<MainContainer />, rootElement);
+render(<LayoutsContainer />, rootElement);

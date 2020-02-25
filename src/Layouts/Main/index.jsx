@@ -1,16 +1,14 @@
 import React from 'react';
-import {Provider} from 'react-redux';
-import store from './../../store';
 import Header from '../Header';
 import Footer from '../Footer';
 
 const MainContainer = () => {
     return (
-        <Provider store={store}>
+        <div>
             <Header />
-            This is main MainContainer
+            <p>This is main MainContainer</p>
             <Footer />
-        </Provider>
+        </div>
     );
 };
 

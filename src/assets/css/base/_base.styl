@@ -1,0 +1,224 @@
+/*------------------------------------------------------------------
+  	[The "base.scss" contains basic default element styles
+  		(colors, typography, margins & padding).]
+------------------------------------------------------------------*/
+
+html {
+    overflow-x hidden
+}
+
+.header {
+    margin-top 1rem
+}
+
+html,
+html a,
+body {
+    -webkit-font-smoothing antialiased
+}
+
+body {
+    font-family $font-family-base
+}
+
+p {
+    font($size: 14px, $weight: 400, $family: $font-family-base)
+    color #000000
+    line-height 1.4
+    margin-bottom 0px
+}
+
+em,
+li,
+li a {
+    font($size: 14px, $weight: 500, $family: $font-family-base)
+    color $color-heading
+}
+
+a {
+    font($family $font-family-base)
+    color $color-link
+    outline 0
+
+    &focus,
+    &hover,
+    &active {
+        outline 0
+        color $color-link-hover
+        text-decoration none
+    }
+}
+
+.link {
+    position relative
+    font($size: 13px, $weight: 600, $family: $font-family-base)
+    text-transform uppercase
+
+    &after {
+        position(absolute, $top: 8px, $right: -15px)
+        size(9px, 2px)
+        background $color-base
+        content ' '
+    }
+}
+
+span {
+    font($size: 14px, $weight: 400, $family: $font-family-base)
+    color #bfc1c7
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font($weight: 700, $family: $font-family-base)
+    color #000000
+    line-height 1.4
+    margin 0 0 15px
+
+    >a {
+        color $color-heading
+
+        &hover {
+            color $color-link-hover
+            text-decoration none
+        }
+
+        &focus {
+            text-decoration none
+        }
+    }
+}
+
+h1 {
+    font($size: 40px)
+}
+
+h2 {
+    font($size: 30px)
+}
+
+h3 {
+    font($size: 22px)
+}
+
+h4 {
+    font($size: 20px)
+}
+
+selection {
+    color $color-white
+    background $color-base
+    text-shadow none
+}
+
+-webkit-selection {
+    color $color-white
+    background $color-base
+    text-shadow none
+}
+
+-moz-selection {
+    color $color-white
+    background $color-base
+    text-shadow none
+}
+
+active,
+focus {
+    outline none
+}
+
+/* Section Seperator */
+.section-seperator {
+    border-bottom 1px solid #edf0f2
+}
+
+/* Content Wrapper Link */
+.content-wrapper-link {
+    position(absolute, $top: 0, $left: 0, $right: 0, $bottom: 0)
+    display block
+    z-index 3
+    text-decoration none
+}
+
+/* Custom container */
+.unstyle-ul {
+    list-style-type none
+    margin 0
+    padding 0
+}
+
+.hv-bd-shadow {
+    &hover {
+        box-shadow 0 0 10px 0 rgba(0, 0, 0, 0.2)
+    }
+}
+
+.banner-header img {
+    width 100%
+}
+
+
+/*:= fixed nav:= */
+.fixed {
+    background #fff
+    min-height 50px
+    position fixed
+    top 0
+    color #000
+    transition top 0.2s ease-in-out
+    text-align center
+    width 100%
+    z-index 999
+
+    .navbar-nav {
+        .nav-link {
+            color #000
+        }
+    }
+}
+
+.nav-down {
+    top -50px
+}
+
+/*------------------------------------------------------------------
+    [Screen above 1200px]
+------------------------------------------------------------------*/
+
+@media (max-width $screen-lg-min) {
+    .footer-form {
+        width 100%
+    }
+}
+
+/*------------------------------------------------------------------
+    [Screen below 1200px]
+------------------------------------------------------------------*/
+
+@media (max-width $screen-lg-min) {
+    .footer-form {
+        width 100%
+    }
+}
+
+/*------------------------------------------------------------------
+    [Screen below 992px]
+------------------------------------------------------------------*/
+
+@media (max-width $screen-md-min) {}
+
+/*------------------------------------------------------------------
+    [Screen below 768px]
+------------------------------------------------------------------*/
+
+@media (max-width $screen-sm-min) {}
+
+/*------------------------------------------------------------------
+    [Screen below 480px]
+------------------------------------------------------------------*/
+
+@media (max-width $screen-xs-min) {}

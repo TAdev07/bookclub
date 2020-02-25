@@ -1,0 +1,221 @@
+// --------------------------------------------------
+// Clearfix
+// --------------------------------------------------
+
+// eg clearfix
+clearfix() {
+    &before,
+    &after {
+        content ' '
+        display table
+    }
+
+    &after {
+        clear both
+    }
+}
+
+// --------------------------------------------------
+// Font
+// --------------------------------------------------
+
+// eg font($size 14px, $style italic, $weight 400, $variant normal, $family $font-family-base)
+font($size = null, $style = null, $weight = null, $variant = null, $family = null) {
+    font-size $size
+    font-style $style
+    font-weight $weight
+    font-variant $variant
+    font-family $family
+}
+
+// --------------------------------------------------
+// Positioning
+// --------------------------------------------------
+
+// eg position(absolute, $top 5px, $left 5px)
+position($position, $top = null, $right = null, $bottom = null, $left = null) {
+    position $position
+    top $top
+    left $left
+    right $right
+    bottom $bottom
+}
+
+// --------------------------------------------------
+// Sizing
+// --------------------------------------------------
+
+// eg 2 size(100%, 1px) */
+size($width, $height) {
+    width $width
+    height $height
+}
+
+// --------------------------------------------------
+// Theme Button
+// --------------------------------------------------
+
+// eg button()
+button() {
+    position relative
+    display inline-block
+    line-height 1.2
+    text-align center
+    background-image none
+    border-radius 20px
+    padding 0 40px
+    height 40px
+    font-size 14px
+    border-style solid
+    white-space nowrap
+    vertical-align middle
+    -ms-touch-action manipulation
+    touch-action manipulation
+    cursor pointer
+    user-select(none)
+
+    &focus,
+    &activefocus,
+    &.activefocus,
+    &.focus,
+    &active.focus,
+    &.active.focus {
+        outline none
+    }
+
+    &hover {
+        cubic-transition(
+            $delay 0,
+            $duration 300ms,
+            $property (
+                all
+            )
+        )
+    }
+
+    &hover,
+    &focus,
+    &.focus {
+        text-decoration none
+    }
+
+    &active,
+    &.active {
+        background-image none
+        outline 0
+    }
+
+    &.disabled,
+    &[disabled],
+    fieldset[disabled] & {
+        cursor not-allowed
+        box-shadow none
+        opacity 0.65
+        pointer-events none
+    }
+}
+
+// eg button-color($color-base, $color-white, transparent, $color-base, 1px, $color-base, $color-base)
+button-color($btn-color, $btn-color-hover, $btn-bg-color, $btn-bg-hover-color, $btn-border-width, $btn-border-color, $btn-border-hover-color) {
+    color $btn-color
+    background $btn-bg-color
+    border-color $btn-border-color
+    border-width $btn-border-width
+
+    &hover,
+    &focus,
+    &.focus {
+        color $btn-color-hover
+        background $btn-bg-hover-color
+        border-color $btn-border-hover-color
+    }
+}
+
+// eg button-size($font-size-14, $font-weight-400, 6px 12px)
+button-size($btn-font-size, $btn-fweight, $btn-padding) {
+    font-size $btn-font-size
+    font-weight $btn-fweight
+    padding $btn-padding
+}
+
+// --------------------------------------------------
+// User Select
+// --------------------------------------------------
+
+/* eg user-select(none) */
+user-select($user-select) {
+    -webkit-user-select ($user-select)
+    -moz-user-select ($user-select)
+    -ms-user-select ($user-select)
+    user-select ($user-select)
+}
+
+// --------------------------------------------------
+// Placeholder
+// --------------------------------------------------
+
+// eg placeholder($color-base)
+placeholder($color $input-color-placeholder) {
+    &-moz-placeholder {
+        color $color
+    } // Firefox 19+
+    &-ms-input-placeholder {
+        color $color
+    } // Internet Egplorer 10+
+    &-webkit-input-placeholder {
+        color $color
+    } // Safari and Chrome
+}
+
+// --------------------------------------------------
+// RGBA Background Opacity
+// --------------------------------------------------
+
+// eg bg-opacity($color-dark, .2)
+bg-opacity($color, $opacity = 0.3) {
+    background rgba($color, $opacity)
+}
+
+// --------------------------------------------------
+// Cubic Bezier Transition
+// --------------------------------------------------
+
+// eg cubic-transition($delay 0, $duration 300ms, $property (all))
+cubic-transition($delay, $duration, $property) {
+    transition {
+        duration $duration
+        property $property
+        timing-function cubic-bezier(0.7, 1, 0.7, 1)
+    }
+}
+
+// --------------------------------------------------
+// Rotate
+// --------------------------------------------------
+
+/* eg rotate(45deg) */
+rotate($degrees) {
+    -webkit-transform rotate($degrees)
+    -moz-transform rotate($degrees)
+    transform rotate($degrees)
+}
+
+// --------------------------------------------------
+// Translate 3D Transition
+// --------------------------------------------------
+
+/* eg translate3d(0,0,0) */
+translate3d($x, $y, $z) {
+    -webkit-transform translate3d($x, $y, $z)
+    -moz-transform translate3d($x, $y, $z)
+    transform translate3d($x, $y, $z)
+}
+
+// --------------------------------------------------
+// Border Radius
+// --------------------------------------------------
+
+/* eg border-radius(3px) */
+border-radius($radius) {
+    border-radius $radius
+}
