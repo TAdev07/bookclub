@@ -3,7 +3,7 @@ import React from 'react';
 const Sidebar = () => {
     return (
         <div>
-            <p>This is main Sidebar</p>
+            <p>This is Sidebar</p>
         </div>
     );
 };

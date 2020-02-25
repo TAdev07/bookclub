@@ -1,6 +1,7 @@
 import React from 'react';
 
 const Home = React.lazy(() => import('Modules/Home'));
+const NotFound = React.lazy(() => import('Modules/NotFound'));
 
 let routes = [
     {
