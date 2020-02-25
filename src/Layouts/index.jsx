@@ -1,18 +1,22 @@
 import React from 'react';
-import store from '../store';
-import {Provider} from 'react-redux';
 
 // Components
-import MainContainer from './Main';
+import MainContainer from 'Layouts/Main';
+import HeaderContainer from 'Layouts/Header';
+import FooterContainer from 'Layouts/Footer';
+import SidebarContainer from 'Layouts/Sidebar';
 
 // Styles
 import '../assets/css/layout.styl';
 
 const Layouts = () => {
     return (
-        <Provider store={store}>
+        <>
+            <HeaderContainer />
+            <SidebarContainer />
             <MainContainer />
-        </Provider>
+            <FooterContainer />
+        </>
     );
 };
 
