@@ -7,7 +7,7 @@
       "paths": {
         "Src/*": ["./src/*"],
         "Modules/*": ["./src/modules/*"],
-        "Assets/*": [".src/assets/*"],
+        "Assets/*": ["./src/assets/*"],
         "Services/*": ["./src/services/*"],
         "Hooks/*": ["./src/hooks/*"],
         "Layouts/*": ["./src/Layouts/*"],

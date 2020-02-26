@@ -7,6 +7,10 @@ html {
     overflow-x hidden
 }
 
+body
+    margin 0
+    padding 0
+
 .header {
     margin-top 1rem
 }
@@ -40,9 +44,9 @@ a {
     color $color-link
     outline 0
 
-    &focus,
-    &hover,
-    &active {
+    &:focus,
+    &:hover,
+    &:active {
         outline 0
         color $color-link-hover
         text-decoration none
@@ -54,7 +58,7 @@ a {
     font($size: 13px, $weight: 600, $family: $font-family-base)
     text-transform uppercase
 
-    &after {
+    &:after {
         position(absolute, $top: 8px, $right: -15px)
         size(9px, 2px)
         background $color-base
@@ -81,12 +85,12 @@ h6 {
     >a {
         color $color-heading
 
-        &hover {
+        &:hover {
             color $color-link-hover
             text-decoration none
         }
 
-        &focus {
+        &:focus {
             text-decoration none
         }
     }

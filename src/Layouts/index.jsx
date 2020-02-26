@@ -1,22 +1,26 @@
 import React from 'react';
 
+// Styles
+import 'Assets/css/bootstrap.min.css';
+import 'Assets/css/styles.styl';
+import 'Assets/css/font-awesome.css';
+
 // Components
 import MainContainer from 'Layouts/Main';
 import HeaderContainer from 'Layouts/Header';
 import FooterContainer from 'Layouts/Footer';
 import SidebarContainer from 'Layouts/Sidebar';
 
-// Styles
-import '../assets/css/layout.styl';
-
 const Layouts = () => {
     return (
-        <>
+        <div className="layout">
             <HeaderContainer />
-            <SidebarContainer />
-            <MainContainer />
+            <div className='container-main'>
+                <SidebarContainer />
+                <MainContainer />
+            </div>
             <FooterContainer />
-        </>
+        </div>
     );
 };
 

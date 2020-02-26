@@ -9,7 +9,6 @@ import LayoutsContainer from './Layouts';
 const Layouts = () => {
     return (
         <Provider store={store}>
-            <div>abc</div>
             <Router>
                 <Switch>
                     <Route path="/" name="Home" component={LayoutsContainer} />

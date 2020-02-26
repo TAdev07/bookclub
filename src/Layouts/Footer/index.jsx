@@ -3,9 +3,7 @@ import styles from './styles.module.less';
 
 const Footer = () => {
     return (
-        <div className={styles['footer']}>
-            This is Footer
-        </div>
+        <div className={styles['footer']} />
     );
 };
 

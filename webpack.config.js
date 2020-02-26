@@ -92,6 +92,10 @@ module.exports = {
                 {
                     loader: 'css-loader',
                     options: {
+                        modules: {
+                            localIdentName: '[local]-[hash:base64:5]'
+                        },
+                        localsConvention: 'camelCase',
                         sourceMap: true
                     }
                 },
@@ -105,6 +109,7 @@ module.exports = {
         },
         {
             test: /\.styl$/,
+            exclude: /\.module.(styl)$/,
             use: [
                 {
                     loader: 'style-loader'
@@ -112,10 +117,6 @@ module.exports = {
                 {
                     loader: 'css-loader',
                     options: {
-                        modules: {
-                            localIdentName: '[local]-[hash:base64:5]'
-                        },
-                        localsConvention: 'camelCase',
                         sourceMap: true
                     }
                 },
